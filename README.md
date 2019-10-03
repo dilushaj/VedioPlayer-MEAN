@@ -1,5 +1,7 @@
 # Mean
 
+A simple Vedio Player application to upload,update and delete vedios with JWT authentication enabled using MongoDB, ExpressJs, Angular 6 and NodeJs
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 ## Development server
