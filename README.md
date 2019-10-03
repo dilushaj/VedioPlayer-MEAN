@@ -1,4 +1,4 @@
-# Mean
+# MEAN Stack - Vedio Player
 
 A simple Vedio Player application to upload,update and delete vedios with JWT authentication enabled using MongoDB, ExpressJs, Angular 6 and NodeJs
 
