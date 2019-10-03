@@ -1,0 +1,79 @@
+<div class="container">
+  <form #form="ngForm" (submit)="register()" class="well form-horizontal"  id="contact_form">
+    <fieldset>
+
+
+      <legend><h2><b>Registration Form</b></h2></legend><br>
+      <div class="form-group">
+        <label class="col-md-4 control-label">UserId</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input  placeholder="UserId" class="form-control"  id="UserId" type="text" required name="UserId" [(ngModel)]= "credentials.UserId" #id="ngModel">
+          </div>
+          <div [hidden]="id.valid || id.pristine"
+               class="alert alert-danger">
+            UserId is required
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Name</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input  placeholder="Name With Initials" class="form-control"  id="UserName" type="text" required name="UserName" [(ngModel)]="credentials.UserName" #name="ngModel">
+          </div>
+          <div [hidden]="name.valid || name.pristine"
+               class="alert alert-danger">
+            UserName is required
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="col-md-4 control-label" >Password</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input placeholder="Password" class="form-control"  type="password" required name="Password" [(ngModel)]="credentials.Password" #password="ngModel">
+          </div>
+          <div [hidden]="password.valid || password.pristine"
+               class="alert alert-danger">
+            Password is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label" >Confirm Password</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input  placeholder="Confirm Password" class="form-control"  type="password" required name="ConfirmPassword" [(ngModel)]="ConfirmPassword" #cpass="ngModel">
+          </div>
+          <div [hidden]="cpass.valid || cpass.pristine"
+               class="alert alert-danger">
+            Confirm password
+          </div>
+        </div>
+      </div>
+
+      <div class="alert alert-success" role="alert" id="success_message">Success<i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label"></label>
+        <div class="col-md-4"><br>
+          <button type="submit" class="btn btn-warning" [disabled]="!form.form.valid">SUBMIT<span class="glyphicon glyphicon-send"></span></button>
+        </div>
+      </div>
+
+    </fieldset>
+  </form>
+
+</div>
+

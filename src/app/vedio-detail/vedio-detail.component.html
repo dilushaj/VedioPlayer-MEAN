@@ -1,0 +1,23 @@
+<div>
+  <div>
+    <iframe width="100%" height="300" [src]="vedio.url | safe">
+    </iframe>
+  </div>
+  <form>
+    <div *ngIf="editTitle" class="form-group">
+      <input type="input" class="form-control" name="title" required placeholder="title" value={{vedio.title}}>
+    </div>
+    <h3 *ngIf="!editTitle" (click)="onTitleClick()">{{vedio.title}}</h3>
+    <div class="form-group">
+      <input type="input" class="form-control" name="url" required placeholder="url" value={{vedio.url}}>
+    </div>
+    <div class="form-group">
+      <textarea class="form-control" rows="5" name="description" value={{vedio.description}}>
+      </textarea>
+    </div>
+    <div class="btn-toolbar">
+      <button type="button" (click)="updateVedio()" class="btn btn-primary btn-sm">Update</button>
+      <button type="button" (click)="deleteVedio()" class="btn btn-danger btn-sm">Delete</button>
+    </div>
+  </form>
+</div>

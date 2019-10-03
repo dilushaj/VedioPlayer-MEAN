@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+
+
+  <form #form="ngForm" class="form-group" class="well">
+    <h2>Login Form</h2>
+    <div class="form-group">
+      <label for="UserId">UserId</label>
+      <input type="text" class="form-control" id="UserId" required ngModel>
+    </div>
+    <div class="form-group">
+    <div> Months :
+      <select id="month" (change)="changeMonths($event)">
+        <option *ngFor = "let i of months">{{i}}</option>
+      </select>
+    </div>
+    </div>
+    <div class="form-group">
+      <label for="Password">Password</label>
+      <input type="Password" class="form-control" id="Password" required ngModel>
+    </div>
+    <div>
+      <span *ngIf = "isAvailable; else condition2">Condition is valid.</span>
+      <ng-template #condition1>Condition is valid from template</ng-template>
+      <ng-template #condition2>Condition is invalid from template</ng-template>
+    </div>
+    <button class="btn btn-success" (click)="myClickFunction($event)">Submit</button>
+
+  </form>
+    </div>
+  </div>
+
